@@ -13,6 +13,8 @@
 		E74CDA0F26146BEF00AEE159 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E74CDA0E26146BEF00AEE159 /* Preview Assets.xcassets */; };
 		E74CDA1A26146BEF00AEE159 /* chekupitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74CDA1926146BEF00AEE159 /* chekupitTests.swift */; };
 		E74CDA2526146BEF00AEE159 /* chekupitUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74CDA2426146BEF00AEE159 /* chekupitUITests.swift */; };
+		E74CDA3F26146D9C00AEE159 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74CDA3E26146D9C00AEE159 /* HomeView.swift */; };
+		E74CDA4426146E8500AEE159 /* model.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74CDA4326146E8500AEE159 /* model.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +47,8 @@
 		E74CDA2026146BEF00AEE159 /* chekupitUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = chekupitUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E74CDA2426146BEF00AEE159 /* chekupitUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chekupitUITests.swift; sourceTree = "<group>"; };
 		E74CDA2626146BEF00AEE159 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E74CDA3E26146D9C00AEE159 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		E74CDA4326146E8500AEE159 /* model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = model.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +104,8 @@
 				E74CDA0B26146BEF00AEE159 /* Assets.xcassets */,
 				E74CDA1026146BEF00AEE159 /* Info.plist */,
 				E74CDA0D26146BEF00AEE159 /* Preview Content */,
+				E74CDA3E26146D9C00AEE159 /* HomeView.swift */,
+				E74CDA4326146E8500AEE159 /* model.swift */,
 			);
 			path = chekupit;
 			sourceTree = "<group>";
@@ -259,8 +265,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E74CDA3F26146D9C00AEE159 /* HomeView.swift in Sources */,
 				E74CDA0A26146BEF00AEE159 /* ContentView.swift in Sources */,
 				E74CDA0826146BEF00AEE159 /* chekupitApp.swift in Sources */,
+				E74CDA4426146E8500AEE159 /* model.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -422,11 +430,12 @@
 				DEVELOPMENT_TEAM = 5T77ZKPBU5;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = chekupit/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 0.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = vantuzproper.chekupit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -444,11 +453,12 @@
 				DEVELOPMENT_TEAM = 5T77ZKPBU5;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = chekupit/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 0.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = vantuzproper.chekupit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
