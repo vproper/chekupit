@@ -1,0 +1,585 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E74CDA0826146BEF00AEE159 /* chekupitApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74CDA0726146BEF00AEE159 /* chekupitApp.swift */; };
+		E74CDA0A26146BEF00AEE159 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74CDA0926146BEF00AEE159 /* ContentView.swift */; };
+		E74CDA0C26146BEF00AEE159 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E74CDA0B26146BEF00AEE159 /* Assets.xcassets */; };
+		E74CDA0F26146BEF00AEE159 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E74CDA0E26146BEF00AEE159 /* Preview Assets.xcassets */; };
+		E74CDA1A26146BEF00AEE159 /* chekupitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74CDA1926146BEF00AEE159 /* chekupitTests.swift */; };
+		E74CDA2526146BEF00AEE159 /* chekupitUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74CDA2426146BEF00AEE159 /* chekupitUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E74CDA1626146BEF00AEE159 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E74CD9FC26146BEF00AEE159 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E74CDA0326146BEF00AEE159;
+			remoteInfo = chekupit;
+		};
+		E74CDA2126146BEF00AEE159 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E74CD9FC26146BEF00AEE159 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E74CDA0326146BEF00AEE159;
+			remoteInfo = chekupit;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		E74CDA0426146BEF00AEE159 /* chekupit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = chekupit.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E74CDA0726146BEF00AEE159 /* chekupitApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chekupitApp.swift; sourceTree = "<group>"; };
+		E74CDA0926146BEF00AEE159 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		E74CDA0B26146BEF00AEE159 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E74CDA0E26146BEF00AEE159 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		E74CDA1026146BEF00AEE159 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E74CDA1526146BEF00AEE159 /* chekupitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = chekupitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E74CDA1926146BEF00AEE159 /* chekupitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chekupitTests.swift; sourceTree = "<group>"; };
+		E74CDA1B26146BEF00AEE159 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E74CDA2026146BEF00AEE159 /* chekupitUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = chekupitUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E74CDA2426146BEF00AEE159 /* chekupitUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chekupitUITests.swift; sourceTree = "<group>"; };
+		E74CDA2626146BEF00AEE159 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E74CDA0126146BEF00AEE159 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E74CDA1226146BEF00AEE159 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E74CDA1D26146BEF00AEE159 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E74CD9FB26146BEF00AEE159 = {
+			isa = PBXGroup;
+			children = (
+				E74CDA0626146BEF00AEE159 /* chekupit */,
+				E74CDA1826146BEF00AEE159 /* chekupitTests */,
+				E74CDA2326146BEF00AEE159 /* chekupitUITests */,
+				E74CDA0526146BEF00AEE159 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E74CDA0526146BEF00AEE159 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E74CDA0426146BEF00AEE159 /* chekupit.app */,
+				E74CDA1526146BEF00AEE159 /* chekupitTests.xctest */,
+				E74CDA2026146BEF00AEE159 /* chekupitUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E74CDA0626146BEF00AEE159 /* chekupit */ = {
+			isa = PBXGroup;
+			children = (
+				E74CDA0726146BEF00AEE159 /* chekupitApp.swift */,
+				E74CDA0926146BEF00AEE159 /* ContentView.swift */,
+				E74CDA0B26146BEF00AEE159 /* Assets.xcassets */,
+				E74CDA1026146BEF00AEE159 /* Info.plist */,
+				E74CDA0D26146BEF00AEE159 /* Preview Content */,
+			);
+			path = chekupit;
+			sourceTree = "<group>";
+		};
+		E74CDA0D26146BEF00AEE159 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				E74CDA0E26146BEF00AEE159 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		E74CDA1826146BEF00AEE159 /* chekupitTests */ = {
+			isa = PBXGroup;
+			children = (
+				E74CDA1926146BEF00AEE159 /* chekupitTests.swift */,
+				E74CDA1B26146BEF00AEE159 /* Info.plist */,
+			);
+			path = chekupitTests;
+			sourceTree = "<group>";
+		};
+		E74CDA2326146BEF00AEE159 /* chekupitUITests */ = {
+			isa = PBXGroup;
+			children = (
+				E74CDA2426146BEF00AEE159 /* chekupitUITests.swift */,
+				E74CDA2626146BEF00AEE159 /* Info.plist */,
+			);
+			path = chekupitUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E74CDA0326146BEF00AEE159 /* chekupit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E74CDA2926146BEF00AEE159 /* Build configuration list for PBXNativeTarget "chekupit" */;
+			buildPhases = (
+				E74CDA0026146BEF00AEE159 /* Sources */,
+				E74CDA0126146BEF00AEE159 /* Frameworks */,
+				E74CDA0226146BEF00AEE159 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = chekupit;
+			productName = chekupit;
+			productReference = E74CDA0426146BEF00AEE159 /* chekupit.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E74CDA1426146BEF00AEE159 /* chekupitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E74CDA2C26146BEF00AEE159 /* Build configuration list for PBXNativeTarget "chekupitTests" */;
+			buildPhases = (
+				E74CDA1126146BEF00AEE159 /* Sources */,
+				E74CDA1226146BEF00AEE159 /* Frameworks */,
+				E74CDA1326146BEF00AEE159 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E74CDA1726146BEF00AEE159 /* PBXTargetDependency */,
+			);
+			name = chekupitTests;
+			productName = chekupitTests;
+			productReference = E74CDA1526146BEF00AEE159 /* chekupitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		E74CDA1F26146BEF00AEE159 /* chekupitUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E74CDA2F26146BEF00AEE159 /* Build configuration list for PBXNativeTarget "chekupitUITests" */;
+			buildPhases = (
+				E74CDA1C26146BEF00AEE159 /* Sources */,
+				E74CDA1D26146BEF00AEE159 /* Frameworks */,
+				E74CDA1E26146BEF00AEE159 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E74CDA2226146BEF00AEE159 /* PBXTargetDependency */,
+			);
+			name = chekupitUITests;
+			productName = chekupitUITests;
+			productReference = E74CDA2026146BEF00AEE159 /* chekupitUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E74CD9FC26146BEF00AEE159 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					E74CDA0326146BEF00AEE159 = {
+						CreatedOnToolsVersion = 12.4;
+					};
+					E74CDA1426146BEF00AEE159 = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = E74CDA0326146BEF00AEE159;
+					};
+					E74CDA1F26146BEF00AEE159 = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = E74CDA0326146BEF00AEE159;
+					};
+				};
+			};
+			buildConfigurationList = E74CD9FF26146BEF00AEE159 /* Build configuration list for PBXProject "chekupit" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E74CD9FB26146BEF00AEE159;
+			productRefGroup = E74CDA0526146BEF00AEE159 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E74CDA0326146BEF00AEE159 /* chekupit */,
+				E74CDA1426146BEF00AEE159 /* chekupitTests */,
+				E74CDA1F26146BEF00AEE159 /* chekupitUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E74CDA0226146BEF00AEE159 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E74CDA0F26146BEF00AEE159 /* Preview Assets.xcassets in Resources */,
+				E74CDA0C26146BEF00AEE159 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E74CDA1326146BEF00AEE159 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E74CDA1E26146BEF00AEE159 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E74CDA0026146BEF00AEE159 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E74CDA0A26146BEF00AEE159 /* ContentView.swift in Sources */,
+				E74CDA0826146BEF00AEE159 /* chekupitApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E74CDA1126146BEF00AEE159 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E74CDA1A26146BEF00AEE159 /* chekupitTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E74CDA1C26146BEF00AEE159 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E74CDA2526146BEF00AEE159 /* chekupitUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E74CDA1726146BEF00AEE159 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E74CDA0326146BEF00AEE159 /* chekupit */;
+			targetProxy = E74CDA1626146BEF00AEE159 /* PBXContainerItemProxy */;
+		};
+		E74CDA2226146BEF00AEE159 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E74CDA0326146BEF00AEE159 /* chekupit */;
+			targetProxy = E74CDA2126146BEF00AEE159 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		E74CDA2726146BEF00AEE159 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		E74CDA2826146BEF00AEE159 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E74CDA2A26146BEF00AEE159 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"chekupit/Preview Content\"";
+				DEVELOPMENT_TEAM = 5T77ZKPBU5;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = chekupit/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = vantuzproper.chekupit;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E74CDA2B26146BEF00AEE159 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"chekupit/Preview Content\"";
+				DEVELOPMENT_TEAM = 5T77ZKPBU5;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = chekupit/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = vantuzproper.chekupit;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		E74CDA2D26146BEF00AEE159 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5T77ZKPBU5;
+				INFOPLIST_FILE = chekupitTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = vantuzproper.chekupitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/chekupit.app/chekupit";
+			};
+			name = Debug;
+		};
+		E74CDA2E26146BEF00AEE159 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5T77ZKPBU5;
+				INFOPLIST_FILE = chekupitTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = vantuzproper.chekupitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/chekupit.app/chekupit";
+			};
+			name = Release;
+		};
+		E74CDA3026146BEF00AEE159 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5T77ZKPBU5;
+				INFOPLIST_FILE = chekupitUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = vantuzproper.chekupitUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = chekupit;
+			};
+			name = Debug;
+		};
+		E74CDA3126146BEF00AEE159 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5T77ZKPBU5;
+				INFOPLIST_FILE = chekupitUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = vantuzproper.chekupitUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = chekupit;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E74CD9FF26146BEF00AEE159 /* Build configuration list for PBXProject "chekupit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E74CDA2726146BEF00AEE159 /* Debug */,
+				E74CDA2826146BEF00AEE159 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E74CDA2926146BEF00AEE159 /* Build configuration list for PBXNativeTarget "chekupit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E74CDA2A26146BEF00AEE159 /* Debug */,
+				E74CDA2B26146BEF00AEE159 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E74CDA2C26146BEF00AEE159 /* Build configuration list for PBXNativeTarget "chekupitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E74CDA2D26146BEF00AEE159 /* Debug */,
+				E74CDA2E26146BEF00AEE159 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E74CDA2F26146BEF00AEE159 /* Build configuration list for PBXNativeTarget "chekupitUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E74CDA3026146BEF00AEE159 /* Debug */,
+				E74CDA3126146BEF00AEE159 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E74CD9FC26146BEF00AEE159 /* Project object */;
+}
