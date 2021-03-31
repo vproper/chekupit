@@ -9,24 +9,64 @@ import SwiftUI
 import Foundation
 var ToBuyList:[Section] = [Section(secTitle: "Молоко"), Section(secTitle: "Сыр"),Section(secTitle: "Хлеб")]
 struct ContentView: View {
-    var title:String
+    @State var name:String
+    @State var showAddWindow:Bool
+    @Binding var title:String
     var body: some View {
-        VStack {
-            HStack {
-                Text(title)
-                    .font(.title)
-                    .fontWeight(.semibold)
-                Spacer()
-                Image(systemName: "plus.circle")
-                    .font(.title)
-                    .foregroundColor(Color(#colorLiteral(red: 0.01149193756, green: 0.4138427973, blue: 0.8461459875, alpha: 1)))
-            }
-            .padding(.horizontal,30)
-            Divider()
-            ScrollView {
-                ForEach(ToBuyList) {item in
-                    SectionView(sect: item)
+        ZStack {
+            VStack {
+                HStack {
+                    Text(title)
+                        .font(.title)
+                        .fontWeight(.semibold)
+                    Spacer()
+                    Button(action: {self.showAddWindow.toggle()}) {
+                        Image(systemName: "plus.circle").font(.title)
+                    }
                 }
+                .padding(.horizontal,30)
+                .padding(.top,12)
+                Divider()
+                ScrollView {
+                    ForEach(ToBuyList) {item in
+                        SectionView(sect: item)
+                    }
+                }
+            }
+            if showAddWindow {
+                VStack {
+                    Text("Добавить покупку")
+                        .font(.title)
+                        .padding(5)
+                    TextField("Введите название", text: $name)
+                        .padding(.horizontal,25)
+                    Divider()
+                    HStack {
+                        Button(action: {
+                            if name != "" {
+                              ToBuyList.append(Section(secTitle:name))
+                            self.showAddWindow.toggle()
+                            }}, label: {
+                            Text("ОК")
+                                .padding(.vertical,6)
+                                .padding(.horizontal,56)
+                    })
+                        Divider()
+                        Button(action: {
+                            self.showAddWindow.toggle()
+                        }, label: {
+                            Text("Отмена")
+                                .padding(.vertical,6)
+                                .padding(.horizontal,40)
+                    })
+                    }
+                }
+                .frame(width:300, height:140)
+                .background(Color(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)))
+                .clipShape(RoundedRectangle(cornerRadius:25,style: .continuous))
+                .shadow(radius:15)
+                .transition(.opacity)
+                
             }
         }
     }
@@ -51,6 +91,7 @@ struct SectionView:View {
 }
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(title: "Список")
+        ContentView(name: "",showAddWindow: false, title: .constant("Список"))
     }
 }
+

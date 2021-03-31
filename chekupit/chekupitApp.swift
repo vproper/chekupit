@@ -11,7 +11,7 @@ import SwiftUI
 struct chekupitApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView(title: "Cписок")
+            ContentView(name: "", showAddWindow: false, title: .constant("Список"))
         }
     }
 }
