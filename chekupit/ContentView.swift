@@ -7,12 +7,14 @@
 
 import SwiftUI
 import Foundation
-var ToBuyList:[Section] = [Section(secTitle: "Молоко"), Section(secTitle: "Сыр"),Section(secTitle: "Хлеб")]
+var ToBuyList:[Section] = [Section(secTitle: "Молоко",isGrayedOut:false), Section(secTitle: "Сыр",isGrayedOut:false),Section(secTitle: "Хлеб",isGrayedOut:true)]
 struct ContentView: View {
     @State var name:String
     @State var showAddWindow:Bool
     @Binding var title:String
+    @Environment(\.colorScheme) var colorScheme
     var body: some View {
+        
         ZStack {
             VStack {
                 HStack {
@@ -44,7 +46,8 @@ struct ContentView: View {
                     HStack {
                         Button(action: {
                             if name != "" {
-                              ToBuyList.append(Section(secTitle:name))
+                                ToBuyList.insert(Section(secTitle:name,isGrayedOut:false),at:0)
+                                
                             self.showAddWindow.toggle()
                             }}, label: {
                             Text("ОК")
@@ -65,7 +68,8 @@ struct ContentView: View {
                 .background(Color(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)))
                 .clipShape(RoundedRectangle(cornerRadius:25,style: .continuous))
                 .shadow(radius:15)
-                .transition(.opacity)
+                .transition(AnyTransition.asymmetric(insertion: .move(edge: .leading), removal: .move(edge:.trailing)))
+                .animation(.default)
                 
             }
         }
@@ -74,15 +78,19 @@ struct ContentView: View {
 struct Section: Identifiable{
     var id=UUID()
     var secTitle: String
+    var isGrayedOut: Bool
 }
 struct SectionView:View {
+    @Environment(\.colorScheme) var colorScheme
     let height:CGFloat=35
     let width:CGFloat=UIScreen.main.bounds.size.width
     var sect: Section
     var body: some View {
+        let darkMode = (colorScheme == .dark)
         VStack {
             HStack {
                 Text(sect.secTitle)
+                    .foregroundColor(sect.isGrayedOut ? Color.gray : (darkMode ? Color.white : Color.black))
                 Spacer()
             }.padding(.horizontal,15)
             Divider()
