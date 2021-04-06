@@ -7,14 +7,16 @@
 
 import SwiftUI
 import Foundation
-var ToBuyList:[Section] = [Section(secTitle: "Молоко",isGrayedOut:false), Section(secTitle: "Сыр",isGrayedOut:false),Section(secTitle: "Хлеб",isGrayedOut:true)]
+//var ToBuyList:[Section] = [Section(secTitle: "Молоко",isGrayedOut:false), Section(secTitle: "Сыр",isGrayedOut:false),Section(secTitle: "Хлеб",isGrayedOut:true)]
+var ToBuyList:[Section] = loadList()
 struct ContentView: View {
     @State var name:String
     @State var showAddWindow:Bool
     @Binding var title:String
     @Environment(\.colorScheme) var colorScheme
+    @State var flag: Bool = false
     var body: some View {
-        
+        let darkMode = (colorScheme == .dark)
         ZStack {
             VStack {
                 HStack {
@@ -32,6 +34,28 @@ struct ContentView: View {
                 ScrollView {
                     ForEach(ToBuyList) {item in
                         SectionView(sect: item)
+                            .gesture(TapGesture().onEnded {
+                                if let index = ToBuyList.firstIndex(where: {$0.id == item.id}) {
+                                    let title = item.secTitle
+                                    if !item.isGrayedOut {
+                                      ToBuyList.remove(at: index)
+                                      ToBuyList.append(Section(secTitle:title, isGrayedOut: true))
+                                    }
+                                    else {
+                                        ToBuyList.remove(at: index)
+                                        ToBuyList.insert(Section(secTitle: title, isGrayedOut: false), at: 0)
+                                    }
+                                    saveList()
+                                    self.flag.toggle()
+                                }
+                            })
+                            .onLongPressGesture(minimumDuration: 1) {
+                                if let index = ToBuyList.firstIndex(where: {$0.id == item.id}){
+                                    ToBuyList.remove(at:index)
+                                    saveList()
+                                    self.flag.toggle()
+                                }
+                            }
                     }
                 }
             }
@@ -47,7 +71,8 @@ struct ContentView: View {
                         Button(action: {
                             if name != "" {
                                 ToBuyList.insert(Section(secTitle:name,isGrayedOut:false),at:0)
-                                
+                                name=""
+                                saveList()
                             self.showAddWindow.toggle()
                             }}, label: {
                             Text("ОК")
@@ -56,6 +81,7 @@ struct ContentView: View {
                     })
                         Divider()
                         Button(action: {
+                            name=""
                             self.showAddWindow.toggle()
                         }, label: {
                             Text("Отмена")
@@ -65,7 +91,7 @@ struct ContentView: View {
                     }
                 }
                 .frame(width:300, height:140)
-                .background(Color(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)))
+                .background(darkMode ? Color(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)) : Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)))
                 .clipShape(RoundedRectangle(cornerRadius:25,style: .continuous))
                 .shadow(radius:15)
                 .transition(AnyTransition.asymmetric(insertion: .move(edge: .leading), removal: .move(edge:.trailing)))
@@ -75,7 +101,7 @@ struct ContentView: View {
         }
     }
 }
-struct Section: Identifiable{
+struct Section: Identifiable, Codable{
     var id=UUID()
     var secTitle: String
     var isGrayedOut: Bool
