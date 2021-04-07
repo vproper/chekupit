@@ -18,14 +18,8 @@ func saveNamesList() {
 }
 func loadList(name: String) -> [Section] {
     var loadedlist:[Section]?=[]
-    var fileManager = FileManager.default
     guard let path = Bundle.main.path(forResource: "allBuyLists", ofType: ".plist") else { return []}
     guard let dictionary = NSDictionary(contentsOfFile: path) else { return []}
-    if (!(fileManager.fileExists(atPath: path)))
-    {
-        var bundle : NSString = Bundle.main.path(forResource: "allBuyLists", ofType: "plist") as! NSString
-        try! fileManager.copyItem(atPath: bundle as String, toPath: path)
-    }
     if let data = dictionary.object(forKey: name) as? Data {
         loadedlist = try? PropertyListDecoder().decode(Array<Section>.self, from: data)
     }

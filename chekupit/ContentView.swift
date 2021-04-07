@@ -16,7 +16,7 @@ struct ContentView: View {
     @State var flag: Bool = false
     var body: some View {
         let darkMode = (colorScheme == .dark)
-        var ToBuyList = loadList(name: name)
+        var ToBuyList = loadList(name: title)
         ZStack {
             VStack {
                 HStack {
@@ -34,25 +34,25 @@ struct ContentView: View {
                 ScrollView {
                     ForEach(ToBuyList) {item in
                         SectionView(sect: item)
-                            .gesture(TapGesture().onEnded {
+                            .onTapGesture {
                                 if let index = ToBuyList.firstIndex(where: {$0.id == item.id}) {
-                                    let title = item.secTitle
-                                    if !item.isGrayedOut {
-                                      ToBuyList.remove(at: index)
-                                      ToBuyList.append(Section(secTitle:title, isGrayedOut: true))
+                                    let scTit = item.secTitle
+                                    if item.isGrayedOut==false {
+                                        ToBuyList.remove(at: index)
+                                        ToBuyList.append(Section(secTitle: scTit, isGrayedOut: true))
                                     }
                                     else {
                                         ToBuyList.remove(at: index)
-                                        ToBuyList.insert(Section(secTitle: title, isGrayedOut: false), at: 0)
+                                        ToBuyList.insert(Section(secTitle: scTit, isGrayedOut: false), at: 0)
                                     }
-                                    saveList(ToBuyList: ToBuyList,name: name)
+                                    saveList(ToBuyList: ToBuyList,name: title)
                                     self.flag.toggle()
                                 }
-                            })
+                            }
                             .onLongPressGesture(minimumDuration: 1) {
                                 if let index = ToBuyList.firstIndex(where: {$0.id == item.id}){
                                     ToBuyList.remove(at:index)
-                                    saveList(ToBuyList: ToBuyList, name: name)
+                                    saveList(ToBuyList: ToBuyList, name: title)
                                     self.flag.toggle()
                                 }
                             }
@@ -72,7 +72,7 @@ struct ContentView: View {
                             if name != "" {
                                 ToBuyList.insert(Section(secTitle:name,isGrayedOut:false),at:0)
                                 name=""
-                                saveList(ToBuyList: ToBuyList, name: name)
+                                saveList(ToBuyList: ToBuyList, name: title)
                             self.showAddWindow.toggle()
                             }}, label: {
                             Text("ОК")
