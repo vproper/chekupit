@@ -12,6 +12,7 @@ struct chekupitApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView(name: "", showAddWindow: false, title: .constant("Список"))
+            
         }
     }
 }

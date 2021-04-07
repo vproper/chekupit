@@ -7,8 +7,7 @@
 
 import SwiftUI
 import Foundation
-//var ToBuyList:[Section] = [Section(secTitle: "Молоко",isGrayedOut:false), Section(secTitle: "Сыр",isGrayedOut:false),Section(secTitle: "Хлеб",isGrayedOut:true)]
-var ToBuyList:[Section] = loadList()
+var NamesList = loadNamesList()
 struct ContentView: View {
     @State var name:String
     @State var showAddWindow:Bool
@@ -17,6 +16,7 @@ struct ContentView: View {
     @State var flag: Bool = false
     var body: some View {
         let darkMode = (colorScheme == .dark)
+        var ToBuyList = loadList(name: name)
         ZStack {
             VStack {
                 HStack {
@@ -45,14 +45,14 @@ struct ContentView: View {
                                         ToBuyList.remove(at: index)
                                         ToBuyList.insert(Section(secTitle: title, isGrayedOut: false), at: 0)
                                     }
-                                    saveList()
+                                    saveList(ToBuyList: ToBuyList,name: name)
                                     self.flag.toggle()
                                 }
                             })
                             .onLongPressGesture(minimumDuration: 1) {
                                 if let index = ToBuyList.firstIndex(where: {$0.id == item.id}){
                                     ToBuyList.remove(at:index)
-                                    saveList()
+                                    saveList(ToBuyList: ToBuyList, name: name)
                                     self.flag.toggle()
                                 }
                             }
@@ -72,7 +72,7 @@ struct ContentView: View {
                             if name != "" {
                                 ToBuyList.insert(Section(secTitle:name,isGrayedOut:false),at:0)
                                 name=""
-                                saveList()
+                                saveList(ToBuyList: ToBuyList, name: name)
                             self.showAddWindow.toggle()
                             }}, label: {
                             Text("ОК")
