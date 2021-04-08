@@ -96,7 +96,6 @@ struct ContentView: View {
                 .shadow(radius:15)
                 .transition(AnyTransition.asymmetric(insertion: .move(edge: .leading), removal: .move(edge:.trailing)))
                 .animation(.default)
-                
             }
         }
     }

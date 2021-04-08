@@ -28,8 +28,7 @@ func loadList(name: String) -> [Section] {
 func saveList(ToBuyList: [Section],name: String) {
     guard let path = Bundle.main.path(forResource: "allBuyLists", ofType: ".plist") else { return}
     guard let dictionary = NSMutableDictionary(contentsOfFile: path) else { return}
-    dictionary.setObject(try? PropertyListEncoder().encode(ToBuyList), forKey:name as NSCopying)
+    dictionary.setObject(try? PropertyListEncoder().encode(ToBuyList), forKey:name as NSCopying) //warning doesn't want to go away at all, but the software works
     dictionary.write(toFile: path, atomically: true)
     //UserDefaults.standard.set(try? PropertyListEncoder().encode(ToBuyList), forKey:name)
 }
-
