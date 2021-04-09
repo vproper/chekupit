@@ -35,6 +35,7 @@ struct ContentView: View {
                 ScrollView {
                     ForEach(ToBuyList) {item in
                         SectionView(sect: item)
+                            .contentShape(Rectangle())
                             .onTapGesture {
                                 if let index = ToBuyList.firstIndex(where: {$0.id == item.id}) {
                                     let scTit = item.secTitle

@@ -32,6 +32,7 @@ struct HomeView: View {
                 ScrollView() {
                     ForEach(allists) {
                         elem in NameView(name:elem.name)
+                            .contentShape(Rectangle())
                             .onTapGesture {
                                 curLName = elem.name
                                 self.showContent.toggle()
@@ -80,10 +81,13 @@ struct HomeView: View {
             if showContent {
                 ZStack {
                     ContentView(name: "", showAddWindow: false, title: $curLName)
-                        .background(darkMode ? Color(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)) : Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)))
                     VStack {
                         HStack {
-                              Button(action: {self.showContent.toggle()}) {
+                              Button(action: {
+                                withAnimation {
+                                        self.showContent.toggle()
+                                }
+                              }) {
                                 Image(systemName: "xmark.circle.fill").font(.title)
                                 Spacer()
                               }.padding(.leading, 20)
@@ -92,8 +96,9 @@ struct HomeView: View {
                     }
                     .padding(.top,15)
                 }
-                .transition(.move(edge: .trailing))
+                .background(darkMode ? Color(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)) : Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)))
                 .animation(.default)
+                .transition(.move(edge: .trailing))
             }
         }
        
@@ -107,6 +112,7 @@ struct NameView:View {
         VStack {
             HStack {
                 Text(name)
+                    .multilineTextAlignment(.leading)
                 Spacer()
             }.padding(.horizontal,15)
             Divider()
