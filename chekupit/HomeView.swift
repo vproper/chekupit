@@ -16,6 +16,7 @@ struct HomeView: View {
     @Environment(\.colorScheme) var colorScheme
     var body: some View {
         let darkMode = (colorScheme == .dark)
+        let _ = firstRunInit()
         ZStack {
             VStack{
                 HStack{

@@ -8,6 +8,24 @@
 import Foundation
 var ToBuyList:[Section] = []
 var allists:[element] = loadNamesList()
+func firstRunInit() -> Bool {
+    var isFirstRun:Bool = true
+    if let dt = UserDefaults.standard.value(forKey:"isFirstRun") as? Bool {
+        isFirstRun=dt
+    }
+    let fileManager = FileManager.default
+    var documentDirectory = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as String
+    documentDirectory.append("/allBuyLists.plist")
+    let path = documentDirectory
+    if(!fileManager.fileExists(atPath: path)) && (isFirstRun) {
+        let data:[String:String]=[:]
+        let someData = NSDictionary(dictionary: data)
+        someData.write(toFile: path, atomically: true)
+    }
+    isFirstRun = false
+    UserDefaults.standard.set(isFirstRun, forKey: "isFirstRun")
+    return isFirstRun
+}
 func loadNamesList() -> [element]{
     var loadedlist:[element]?=[]
     if let data = UserDefaults.standard.value(forKey:"allists") as? Data {
