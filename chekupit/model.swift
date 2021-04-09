@@ -33,3 +33,7 @@ func saveList(ToBuyList: [Section],name: String) {
     dictionary.write(toFile: path, atomically: true)
     //UserDefaults.standard.set(try? PropertyListEncoder().encode(ToBuyList), forKey:name)
 }
+struct element: Identifiable, Codable {
+    var id=UUID()
+    var name:String
+}

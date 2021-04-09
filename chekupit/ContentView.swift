@@ -15,6 +15,8 @@ struct ContentView: View {
     @Binding var id:Int
     @Environment(\.colorScheme) var colorScheme
     @State var flag: Bool = false
+    @State var showRenWindow:Bool = false
+    @State var newName:String = ""
     var body: some View {
         let darkMode = (colorScheme == .dark)
         var ToBuyList = loadList(name: title)
@@ -24,6 +26,9 @@ struct ContentView: View {
                     Text(title)
                         .font(.title)
                         .fontWeight(.semibold)
+                        .onTapGesture {
+                            self.showRenWindow.toggle()
+                        }
                     Spacer()
                     Button(action: {self.showAddWindow.toggle()}) {
                         Image(systemName: "plus.circle").font(.title)
@@ -86,6 +91,45 @@ struct ContentView: View {
                         Button(action: {
                             name=""
                             self.showAddWindow.toggle()
+                        }, label: {
+                            Text("Отмена")
+                                .padding(.vertical,6)
+                                .padding(.horizontal,40)
+                    })
+                    }
+                }
+                .frame(width:300, height:140)
+                .background(darkMode ? Color(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)) : Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)))
+                .clipShape(RoundedRectangle(cornerRadius:25,style: .continuous))
+                .shadow(radius:15)
+                .transition(AnyTransition.asymmetric(insertion: .move(edge: .leading), removal: .move(edge:.trailing)))
+                .animation(.default)
+            }
+            if showRenWindow {
+                VStack {
+                    Text("Переименование")
+                        .font(.title)
+                        .padding(5)
+                    TextField("Введите название", text: $newName)
+                        .padding(.horizontal,25)
+                    Divider()
+                    HStack {
+                        Button(action: {
+                            if newName != "" {
+                                saveList(ToBuyList: ToBuyList, name: newName)
+                                saveList(ToBuyList: [], name: title)
+                                allists[id] = element(name: newName)
+                                title=newName
+                            self.showRenWindow.toggle()
+                            }}, label: {
+                            Text("ОК")
+                                .padding(.vertical,6)
+                                .padding(.horizontal,56)
+                    })
+                        Divider()
+                        Button(action: {
+                            newName=""
+                            self.showRenWindow.toggle()
                         }, label: {
                             Text("Отмена")
                                 .padding(.vertical,6)

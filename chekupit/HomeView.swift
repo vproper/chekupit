@@ -12,6 +12,7 @@ struct HomeView: View {
     @State var curLName: String = ""
     @State var curID:Int=0
     @State var showContent: Bool = false
+    @State var flag:Bool = false
     @Environment(\.colorScheme) var colorScheme
     var body: some View {
         let darkMode = (colorScheme == .dark)
@@ -37,6 +38,12 @@ struct HomeView: View {
                                 curLName = elem.name
                                 curID = allists.firstIndex(where: {$0.id == elem.id}) ?? 0
                                 self.showContent.toggle()
+                            }
+                            .onLongPressGesture(minimumDuration: 1) {
+                                saveList(ToBuyList: [], name: elem.name)
+                                curID = allists.firstIndex(where: {$0.id == elem.id}) ?? 0
+                                allists.remove(at: curID)
+                                self.flag.toggle()
                             }
                     }
                 }
@@ -86,23 +93,24 @@ struct HomeView: View {
                     VStack {
                         HStack {
                               Button(action: {
-                                withAnimation {
                                     withAnimation {
                                         self.showContent.toggle()
                                     }
-                                }
                               }) {
                                 Image(systemName: "xmark.circle.fill").font(.title)
-                                Spacer()
-                              }.padding(.leading, 20)
+                                
+                              }
+                            Spacer()
                         }
                         Spacer()
                     }
+                    .padding(.leading, 20)
                     .padding(.top,15)
                 }
                 .background(Color("bgColor"))
                 .transition(AnyTransition.move(edge: .trailing))
                 .animation(.default)
+                
             }
         }
        
@@ -122,10 +130,6 @@ struct NameView:View {
             Divider()
         }
     }
-}
-struct element: Identifiable, Codable {
-    var id=UUID()
-    var name:String
 }
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
