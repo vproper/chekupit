@@ -12,7 +12,7 @@ struct HomeView: View {
     @State var curLName: String = ""
     @State var curID:Int=0
     @State var showContent: Bool = false
-    @State var flag:Bool = false
+    @State var fl:Bool = false
     @Environment(\.colorScheme) var colorScheme
     var body: some View {
         let darkMode = (colorScheme == .dark)
@@ -45,7 +45,7 @@ struct HomeView: View {
                                 curID = allists.firstIndex(where: {$0.id == elem.id}) ?? 0
                                 allists.remove(at: curID)
                                 saveNamesList()
-                                self.flag.toggle()
+                                self.fl.toggle()
                             }
                     }
                 }

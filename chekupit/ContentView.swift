@@ -52,15 +52,16 @@ struct ContentView: View {
                                         ToBuyList.remove(at: index)
                                         ToBuyList.insert(Section(secTitle: scTit, isGrayedOut: false), at: 0)
                                     }
+                                    flag = !flag
                                     saveList(ToBuyList: ToBuyList,name: title)
-                                    self.flag.toggle()
+                                    
                                 }
                             }
                             .onLongPressGesture(minimumDuration: 1) {
                                 if let index = ToBuyList.firstIndex(where: {$0.id == item.id}){
                                     ToBuyList.remove(at:index)
                                     saveList(ToBuyList: ToBuyList, name: title)
-                                    self.flag.toggle()
+                                    flag = !flag
                                 }
                             }
                     }
