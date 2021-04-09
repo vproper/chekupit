@@ -43,6 +43,7 @@ struct HomeView: View {
                                 saveList(ToBuyList: [], name: elem.name)
                                 curID = allists.firstIndex(where: {$0.id == elem.id}) ?? 0
                                 allists.remove(at: curID)
+                                saveNamesList()
                                 self.flag.toggle()
                             }
                     }
