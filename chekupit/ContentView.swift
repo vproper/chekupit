@@ -7,7 +7,6 @@
 
 import SwiftUI
 import Foundation
-var NamesList = loadNamesList()
 struct ContentView: View {
     @State var name:String
     @State var showAddWindow:Bool
@@ -18,8 +17,8 @@ struct ContentView: View {
     @State var showRenWindow:Bool = false
     @State var newName:String = ""
     var body: some View {
+        let _ = loadList(name: title)
         let darkMode = (colorScheme == .dark)
-        var ToBuyList = loadList(name: title)
         ZStack {
             VStack {
                 HStack {

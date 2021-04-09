@@ -6,6 +6,7 @@
 //
 
 import Foundation
+var ToBuyList:[Section] = []
 var allists:[element] = loadNamesList()
 func loadNamesList() -> [element]{
     var loadedlist:[element]?=[]
@@ -17,14 +18,15 @@ func loadNamesList() -> [element]{
 func saveNamesList() {
     UserDefaults.standard.set(try? PropertyListEncoder().encode(allists), forKey:"allists")
 }
-func loadList(name: String) -> [Section] {
+func loadList(name: String) -> Bool{
     var loadedlist:[Section]?=[]
-    guard let path = Bundle.main.path(forResource: "allBuyLists", ofType: ".plist") else { return []}
-    guard let dictionary = NSDictionary(contentsOfFile: path) else { return []}
+    guard let path = Bundle.main.path(forResource: "allBuyLists", ofType: ".plist") else {ToBuyList = []; return false}
+    guard let dictionary = NSDictionary(contentsOfFile: path) else {ToBuyList = []; return false}
     if let data = dictionary.object(forKey: name) as? Data {
         loadedlist = try? PropertyListDecoder().decode(Array<Section>.self, from: data)
     }
-    return loadedlist ?? []
+    ToBuyList = loadedlist ?? []
+    return false
 }
 func saveList(ToBuyList: [Section],name: String) {
     guard let path = Bundle.main.path(forResource: "allBuyLists", ofType: ".plist") else { return}
