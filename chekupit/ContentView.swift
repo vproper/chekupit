@@ -20,6 +20,9 @@ struct ContentView: View {
         let _ = loadList(name: title)
         let darkMode = (colorScheme == .dark)
         ZStack {
+            if flag {
+                Text(" ").opacity(0.0000000001)
+            }
             VStack {
                 HStack {
                     Text(title)
@@ -144,6 +147,7 @@ struct ContentView: View {
                 .transition(AnyTransition.asymmetric(insertion: .move(edge: .leading), removal: .move(edge:.trailing)))
                 .animation(.default)
             }
+           
         }
     }
 }
