@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Foundation
+var TBL=ToBuyList
 struct ContentView: View {
     @State var name:String
     @State var showAddWindow:Bool
@@ -41,29 +42,29 @@ struct ContentView: View {
                 .padding(.leading,35)
                 Divider()
                 ScrollView {
-                    ForEach(ToBuyList) {item in
+                    ForEach(TBL) {item in
                         SectionView(sect: item)
                             .contentShape(Rectangle())
                             .onTapGesture {
-                                if let index = ToBuyList.firstIndex(where: {$0.id == item.id}) {
+                                if let index = TBL.firstIndex(where: {$0.id == item.id}) {
                                     let scTit = item.secTitle
                                     if item.isGrayedOut==false {
-                                        ToBuyList.remove(at: index)
-                                        ToBuyList.append(Section(secTitle: scTit, isGrayedOut: true))
+                                        TBL.remove(at: index)
+                                        TBL.append(Section(secTitle: scTit, isGrayedOut: true))
                                     }
                                     else {
-                                        ToBuyList.remove(at: index)
-                                        ToBuyList.insert(Section(secTitle: scTit, isGrayedOut: false), at: 0)
+                                        TBL.remove(at: index)
+                                        TBL.insert(Section(secTitle: scTit, isGrayedOut: false), at: 0)
                                     }
                                     flag = !flag
-                                    saveList(ToBuyList: ToBuyList,name: title)
+                                    saveList(List: TBL,name: title)
                                     
                                 }
                             }
                             .onLongPressGesture(minimumDuration: 1) {
-                                if let index = ToBuyList.firstIndex(where: {$0.id == item.id}){
-                                    ToBuyList.remove(at:index)
-                                    saveList(ToBuyList: ToBuyList, name: title)
+                                if let index = TBL.firstIndex(where: {$0.id == item.id}){
+                                    TBL.remove(at:index)
+                                    saveList(List: TBL, name: title)
                                     flag = !flag
                                 }
                             }
@@ -81,9 +82,9 @@ struct ContentView: View {
                     HStack {
                         Button(action: {
                             if name != "" {
-                                ToBuyList.insert(Section(secTitle:name,isGrayedOut:false),at:0)
+                                TBL.insert(Section(secTitle:name,isGrayedOut:false),at:0)
                                 name=""
-                                saveList(ToBuyList: ToBuyList, name: title)
+                                saveList(List: TBL, name: title)
                             self.showAddWindow.toggle()
                             }}, label: {
                             Text("ОК")
@@ -119,8 +120,8 @@ struct ContentView: View {
                     HStack {
                         Button(action: {
                             if newName != "" {
-                                saveList(ToBuyList: ToBuyList, name: newName)
-                                saveList(ToBuyList: [], name: title)
+                                saveList(List: TBL, name: newName)
+                                saveList(List: [], name: title)
                                 allists[id] = element(name: newName)
                                 title=newName
                             self.showRenWindow.toggle()
@@ -151,11 +152,7 @@ struct ContentView: View {
         }
     }
 }
-struct Section: Identifiable, Codable{
-    var id=UUID()
-    var secTitle: String
-    var isGrayedOut: Bool
-}
+
 struct SectionView:View {
     @Environment(\.colorScheme) var colorScheme
     let height:CGFloat=35

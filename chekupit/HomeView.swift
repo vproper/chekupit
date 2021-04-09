@@ -16,7 +16,6 @@ struct HomeView: View {
     @Environment(\.colorScheme) var colorScheme
     var body: some View {
         let darkMode = (colorScheme == .dark)
-        let _ = firstRunInit()
         ZStack {
             VStack{
                 HStack{
@@ -38,10 +37,11 @@ struct HomeView: View {
                             .onTapGesture {
                                 curLName = elem.name
                                 curID = allists.firstIndex(where: {$0.id == elem.id}) ?? 0
+                                loadList(name: curLName)
                                 self.showContent.toggle()
                             }
                             .onLongPressGesture(minimumDuration: 1) {
-                                saveList(ToBuyList: [], name: elem.name)
+                                saveList(List:[], name: elem.name)
                                 curID = allists.firstIndex(where: {$0.id == elem.id}) ?? 0
                                 allists.remove(at: curID)
                                 saveNamesList()
