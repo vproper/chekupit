@@ -30,6 +30,7 @@ struct ContentView: View {
                 }
                 .padding(.horizontal,30)
                 .padding(.top,12)
+                .padding(.leading,35)
                 Divider()
                 ScrollView {
                     ForEach(ToBuyList) {item in

@@ -78,8 +78,22 @@ struct HomeView: View {
                 .animation(.default)
             }
             if showContent {
-                ContentView(name: "", showAddWindow: false, title: $curLName)
-                    .background(darkMode ? Color(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)) : Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)))
+                ZStack {
+                    ContentView(name: "", showAddWindow: false, title: $curLName)
+                        .background(darkMode ? Color(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)) : Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)))
+                    VStack {
+                        HStack {
+                              Button(action: {self.showContent.toggle()}) {
+                                Image(systemName: "xmark.circle.fill").font(.title)
+                                Spacer()
+                              }.padding(.leading, 20)
+                        }
+                        Spacer()
+                    }
+                    .padding(.top,15)
+                }
+                .transition(.move(edge: .trailing))
+                .animation(.default)
             }
         }
        
