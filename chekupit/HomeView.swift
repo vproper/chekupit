@@ -6,11 +6,11 @@
 //
 
 import SwiftUI
-var allists:[element] = loadNamesList()
 struct HomeView: View {
     @State var showAddWindow:Bool = false
     @State var lName:String = ""
     @State var curLName: String = ""
+    @State var curID:Int=0
     @State var showContent: Bool = false
     @Environment(\.colorScheme) var colorScheme
     var body: some View {
@@ -35,6 +35,7 @@ struct HomeView: View {
                             .contentShape(Rectangle())
                             .onTapGesture {
                                 curLName = elem.name
+                                curID = allists.firstIndex(where: {$0.id == elem.id}) ?? 0
                                 self.showContent.toggle()
                             }
                     }
@@ -80,12 +81,15 @@ struct HomeView: View {
             }
             if showContent {
                 ZStack {
-                    ContentView(name: "", showAddWindow: false, title: $curLName)
+                    Color("bgColor")
+                    ContentView(name: "", showAddWindow: false, title: $curLName, id: $curID)
                     VStack {
                         HStack {
                               Button(action: {
                                 withAnimation {
+                                    withAnimation {
                                         self.showContent.toggle()
+                                    }
                                 }
                               }) {
                                 Image(systemName: "xmark.circle.fill").font(.title)
@@ -96,9 +100,9 @@ struct HomeView: View {
                     }
                     .padding(.top,15)
                 }
-                .background(darkMode ? Color(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)) : Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)))
+                .background(Color("bgColor"))
+                .transition(AnyTransition.move(edge: .trailing))
                 .animation(.default)
-                .transition(.move(edge: .trailing))
             }
         }
        

@@ -12,6 +12,7 @@ struct ContentView: View {
     @State var name:String
     @State var showAddWindow:Bool
     @Binding var title:String
+    @Binding var id:Int
     @Environment(\.colorScheme) var colorScheme
     @State var flag: Bool = false
     var body: some View {
@@ -126,7 +127,7 @@ struct SectionView:View {
 }
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(name: "",showAddWindow: false, title: .constant("Список"))
+        ContentView(name: "",showAddWindow: false, title: .constant("Список"), id: .constant(0))
     }
 }
 

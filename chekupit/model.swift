@@ -6,6 +6,7 @@
 //
 
 import Foundation
+var allists:[element] = loadNamesList()
 func loadNamesList() -> [element]{
     var loadedlist:[element]?=[]
     if let data = UserDefaults.standard.value(forKey:"allists") as? Data {
