@@ -101,7 +101,7 @@ struct ContentView: View {
                                 .padding(.horizontal,40)
                     })
                     }
-                }
+                }.zIndex(3)
                 .frame(width:300, height:140)
                 .background(darkMode ? Color(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)) : Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)))
                 .clipShape(RoundedRectangle(cornerRadius:25,style: .continuous))

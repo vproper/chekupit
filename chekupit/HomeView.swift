@@ -90,7 +90,6 @@ struct HomeView: View {
             }
             if showContent {
                 ZStack {
-                    Color("bgColor")
                     ContentView(name: "", showAddWindow: false, title: $curLName, id: $curID)
                     VStack {
                         HStack {
@@ -109,10 +108,9 @@ struct HomeView: View {
                     .padding(.leading, 20)
                     .padding(.top,15)
                 }
-                .background(Color("bgColor"))
+                .background(darkMode ? Color(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)) : Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)))
                 .transition(AnyTransition.move(edge: .trailing))
                 .animation(.default)
-                
             }
         }
        

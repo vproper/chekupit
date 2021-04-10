@@ -9,12 +9,12 @@
 /* Begin PBXBuildFile section */
 		E74CDA0826146BEF00AEE159 /* chekupitApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74CDA0726146BEF00AEE159 /* chekupitApp.swift */; };
 		E74CDA0A26146BEF00AEE159 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74CDA0926146BEF00AEE159 /* ContentView.swift */; };
-		E74CDA0C26146BEF00AEE159 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E74CDA0B26146BEF00AEE159 /* Assets.xcassets */; };
 		E74CDA0F26146BEF00AEE159 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E74CDA0E26146BEF00AEE159 /* Preview Assets.xcassets */; };
 		E74CDA1A26146BEF00AEE159 /* chekupitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74CDA1926146BEF00AEE159 /* chekupitTests.swift */; };
 		E74CDA2526146BEF00AEE159 /* chekupitUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74CDA2426146BEF00AEE159 /* chekupitUITests.swift */; };
 		E74CDA3F26146D9C00AEE159 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74CDA3E26146D9C00AEE159 /* HomeView.swift */; };
 		E74CDA4426146E8500AEE159 /* model.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74CDA4326146E8500AEE159 /* model.swift */; };
+		E7A36B6A26219F2F004ED3C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7A36B6926219F2F004ED3C9 /* Assets.xcassets */; };
 		E7EEF1EA261E0DC7001F7A0C /* allBuyLists.plist in Resources */ = {isa = PBXBuildFile; fileRef = E7EEF1E9261E0DC7001F7A0C /* allBuyLists.plist */; };
 /* End PBXBuildFile section */
 
@@ -39,7 +39,6 @@
 		E74CDA0426146BEF00AEE159 /* chekupit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = chekupit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E74CDA0726146BEF00AEE159 /* chekupitApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chekupitApp.swift; sourceTree = "<group>"; };
 		E74CDA0926146BEF00AEE159 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		E74CDA0B26146BEF00AEE159 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E74CDA0E26146BEF00AEE159 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E74CDA1026146BEF00AEE159 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E74CDA1526146BEF00AEE159 /* chekupitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = chekupitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -50,6 +49,7 @@
 		E74CDA2626146BEF00AEE159 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E74CDA3E26146D9C00AEE159 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		E74CDA4326146E8500AEE159 /* model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = model.swift; sourceTree = "<group>"; };
+		E7A36B6926219F2F004ED3C9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E7EEF1E9261E0DC7001F7A0C /* allBuyLists.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = allBuyLists.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -103,11 +103,11 @@
 			children = (
 				E74CDA0726146BEF00AEE159 /* chekupitApp.swift */,
 				E74CDA0926146BEF00AEE159 /* ContentView.swift */,
-				E74CDA0B26146BEF00AEE159 /* Assets.xcassets */,
 				E74CDA1026146BEF00AEE159 /* Info.plist */,
 				E74CDA0D26146BEF00AEE159 /* Preview Content */,
 				E74CDA3E26146D9C00AEE159 /* HomeView.swift */,
 				E74CDA4326146E8500AEE159 /* model.swift */,
+				E7A36B6926219F2F004ED3C9 /* Assets.xcassets */,
 				E7EEF1E9261E0DC7001F7A0C /* allBuyLists.plist */,
 			);
 			path = chekupit;
@@ -243,8 +243,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E7EEF1EA261E0DC7001F7A0C /* allBuyLists.plist in Resources */,
+				E7A36B6A26219F2F004ED3C9 /* Assets.xcassets in Resources */,
 				E74CDA0F26146BEF00AEE159 /* Preview Assets.xcassets in Resources */,
-				E74CDA0C26146BEF00AEE159 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
