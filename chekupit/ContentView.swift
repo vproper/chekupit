@@ -7,12 +7,12 @@
 
 import SwiftUI
 import Foundation
-var TBL=ToBuyList
 struct ContentView: View {
     @State var name:String
     @State var showAddWindow:Bool
     @Binding var title:String
     @Binding var id:Int
+    @State var TBL:[Section]
     @Environment(\.colorScheme) var colorScheme
     @State var flag: Bool = false
     @State var showRenWindow:Bool = false
@@ -101,7 +101,7 @@ struct ContentView: View {
                                 .padding(.horizontal,40)
                     })
                     }
-                }.zIndex(3)
+                }.zIndex(45576)
                 .frame(width:300, height:140)
                 .background(darkMode ? Color(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)) : Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)))
                 .clipShape(RoundedRectangle(cornerRadius:25,style: .continuous))
@@ -124,6 +124,7 @@ struct ContentView: View {
                                 saveList(List: [], name: title)
                                 allists[id] = element(name: newName)
                                 title=newName
+                                newName=""
                             self.showRenWindow.toggle()
                             }}, label: {
                             Text("ОК")
@@ -141,6 +142,7 @@ struct ContentView: View {
                     })
                     }
                 }
+                .zIndex(456767)
                 .frame(width:300, height:140)
                 .background(darkMode ? Color(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)) : Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)))
                 .clipShape(RoundedRectangle(cornerRadius:25,style: .continuous))
@@ -172,7 +174,7 @@ struct SectionView:View {
 }
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(name: "",showAddWindow: false, title: .constant("Список"), id: .constant(0))
+        ContentView(name: "",showAddWindow: false, title: .constant("Список"), id: .constant(0), TBL: [])
     }
 }
 

@@ -6,13 +6,17 @@
 //
 
 import SwiftUI
+var ToBuyList:[Section]=[]
 struct HomeView: View {
     @State var showAddWindow:Bool = false
     @State var lName:String = ""
     @State var curLName: String = ""
+    @State var allis = allists
+    @State var showRemovalWindow = false
     @State var curID:Int=0
     @State var showContent: Bool = false
     @State var fl:Bool = false
+    @State var curNm = ""
     @Environment(\.colorScheme) var colorScheme
     var body: some View {
         let darkMode = (colorScheme == .dark)
@@ -31,21 +35,19 @@ struct HomeView: View {
                 .padding(.top, 12)
                 Divider()
                 ScrollView() {
-                    ForEach(allists) {
+                    ForEach(allis) {
                         elem in NameView(name:elem.name)
                             .contentShape(Rectangle())
                             .onTapGesture {
                                 curLName = elem.name
                                 curID = allists.firstIndex(where: {$0.id == elem.id}) ?? 0
-                                loadList(name: curLName)
+                                ToBuyList=loadList(name: curLName)
                                 self.showContent.toggle()
                             }
                             .onLongPressGesture(minimumDuration: 1) {
-                                saveList(List:[], name: elem.name)
                                 curID = allists.firstIndex(where: {$0.id == elem.id}) ?? 0
-                                allists.remove(at: curID)
-                                saveNamesList()
-                                self.fl.toggle()
+                                curNm = elem.name
+                                self.showRemovalWindow.toggle()
                             }
                     }
                 }
@@ -64,6 +66,7 @@ struct HomeView: View {
                                 allists.insert(element(name:lName),at:0)
                                 lName=""
                                 saveNamesList()
+                                allis=allists
                             self.showAddWindow.toggle()
                             }}, label: {
                             Text("ОК")
@@ -89,13 +92,54 @@ struct HomeView: View {
                 .transition(AnyTransition.asymmetric(insertion: .move(edge: .leading), removal: .move(edge:.trailing)))
                 .animation(.default)
             }
+            if showRemovalWindow {
+                Spacer()
+                VStack {
+                    Text("Вы действительно хотите удалить список \(curNm)?")
+                        .font(.title2)
+                        .padding(5)
+                        .multilineTextAlignment(.center)
+                    Spacer()
+                    Divider()
+                    HStack {
+                        Button(action: {
+                            saveList(List:[], name: curNm)
+                            allists.remove(at: curID)
+                            allis=allists
+                            saveNamesList()
+                            self.showRemovalWindow.toggle()
+                           }, label: {
+                            Text("Да")
+                                .padding(.vertical,6)
+                                .padding(.horizontal,45)
+                    })
+                        Divider()
+                        Button(action: {
+                            self.showRemovalWindow.toggle()
+                        }, label: {
+                            Text("Нет")
+                                .padding(.vertical,6)
+                                .padding(.horizontal,40)
+                    })
+                    }.frame(width:300, height: 40)
+                }
+                .zIndex(300)
+                .frame(width:300, height:150)
+                .background(darkMode ? Color(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)) : Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)))
+                .clipShape(RoundedRectangle(cornerRadius:25,style: .continuous))
+                .shadow(radius:15)
+                .transition(AnyTransition.asymmetric(insertion: .move(edge: .leading), removal: .move(edge:.trailing)))
+                .animation(.default)
+                
+            }
             if showContent {
                 ZStack {
-                    ContentView(name: "", showAddWindow: false, title: $curLName, id: $curID)
+                    ContentView(name: "", showAddWindow: false, title: $curLName, id: $curID, TBL: ToBuyList)
                     VStack {
                         HStack {
                               Button(action: {
                                     withAnimation {
+                                        allis=allists
                                         self.showContent.toggle()
                                     }
                               }) {
@@ -115,6 +159,7 @@ struct HomeView: View {
                 .animation(.default)
             }
         }
+        .animation(.default)
        
     }
 }
